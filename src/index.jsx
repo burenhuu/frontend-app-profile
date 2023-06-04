@@ -26,12 +26,12 @@ import configureStore from './data/configureStore';
 
 import './index.scss';
 import Head from './head/Head';
-import messages from './i18n';
+import { IntlProvider } from '@edx/frontend-platform/i18n';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={configureStore()}>
-      <IntlProvider defaultLocale='mn' locale='mn' messages={messages.mn}>
+      <IntlProvider defaultLocale='mn' locale='mn' messages={appMessages.mn}>
         <Head />
         <Header />
         <main>
