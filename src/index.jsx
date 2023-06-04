@@ -26,20 +26,23 @@ import configureStore from './data/configureStore';
 
 import './index.scss';
 import Head from './head/Head';
+import messages from './i18n';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={configureStore()}>
-      <Head />
-      <Header />
-      <main>
-        <Switch>
-          <Route path="/u/:username" component={ProfilePage} />
-          <Route path="/notfound" component={NotFoundPage} />
-          <Route path="*" component={NotFoundPage} />
-        </Switch>
-      </main>
-      <Footer />
+      <IntlProvider defaultLocale='mn' locale='mn' messages={messages.mn}>
+        <Head />
+        <Header />
+        <main>
+          <Switch>
+            <Route path="/u/:username" component={ProfilePage} />
+            <Route path="/notfound" component={NotFoundPage} />
+            <Route path="*" component={NotFoundPage} />
+          </Switch>
+        </main>
+        <Footer />
+    </IntlProvider>
     </AppProvider>,
     document.getElementById('root'),
   );
