@@ -5,6 +5,7 @@ import zhcnMessages from './messages/zh_CN.json';
 import ptMessages from './messages/pt.json';
 import itMessages from './messages/it.json';
 import ukMessages from './messages/uk.json';
+import mnMessages from './messages/mn.json';
 import deMessages from './messages/de.json';
 import ruMessages from './messages/ru.json';
 import hiMessages from './messages/hi.json';
@@ -23,6 +24,7 @@ const messages = {
   'fr-ca': frCAMessages,
   ru: ruMessages,
   uk: ukMessages,
+  mn: mnMessages,
 };
 
 export default messages;
