@@ -15,33 +15,24 @@ import {
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Switch } from 'react-router-dom';
 
-import Header, { messages as headerMessages } from '@edx/frontend-component-header';
-import Footer, { messages as footerMessages } from '@edx/frontend-component-footer';
+import { messages as headerMessages } from '@edx/frontend-component-header';
+import { messages as footerMessages } from '@edx/frontend-component-footer';
 
 import appMessages from './i18n';
-import { ProfilePage, NotFoundPage } from './profile';
 import configureStore from './data/configureStore';
 
 import './index.scss';
 import Head from './head/Head';
 import { IntlProvider } from '@edx/frontend-platform/i18n';
+import Layout from "./layout";
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={configureStore()}>
       <IntlProvider defaultLocale='mn' locale='mn' messages={appMessages.mn}>
         <Head />
-        <Header />
-        <main>
-          <Switch>
-            <Route path="/u/:username" component={ProfilePage} />
-            <Route path="/notfound" component={NotFoundPage} />
-            <Route path="*" component={NotFoundPage} />
-          </Switch>
-        </main>
-        <Footer />
+        <Layout/>
     </IntlProvider>
     </AppProvider>,
     document.getElementById('root'),
