@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from '@edx/frontend-component-header';
 import Footer from '@edx/frontend-component-footer';
