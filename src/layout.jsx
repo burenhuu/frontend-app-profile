@@ -10,10 +10,10 @@ import './index.scss';
 export default function Layout(){
   useEffect(() => {
       const dropdownItems = document.getElementsByClassName('dropdown-item');
-      dropdownItems.forEach((item) => {
-        if (item.textContent === 'Бүртгэл') {
-          item.href = 'https://apps.surgalt.mojha.gov.mn/account';
-        }
+      Array.prototype.forEach.call(dropdownItems, function(item) {
+          if (item.textContent === 'Бүртгэл') {
+              item.href = 'https://apps.surgalt.mojha.gov.mn/account';
+          }
       });
   }, []);
   return(
