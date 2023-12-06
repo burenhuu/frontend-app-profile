@@ -20,7 +20,7 @@ export default function Layout(){
                       item.href = 'https://apps.surgalt.mojha.gov.mn/account';
                   }
               });
-          }, 2000);
+          }, 500);
       });
   }, []);
   return(
