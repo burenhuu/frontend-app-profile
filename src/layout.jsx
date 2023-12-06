@@ -10,7 +10,9 @@ import './index.scss';
 export default function Layout(){
   useEffect(() => {
       const dropdownItems = document.getElementsByClassName('dropdown-item');
+      console.log("dropdownItems", dropdownItems)
       Array.prototype.forEach.call(dropdownItems, function(item) {
+          console.log("item.textContent", item.textContent)
           if (item.textContent === 'Бүртгэл') {
               item.href = 'https://apps.surgalt.mojha.gov.mn/account';
           }
