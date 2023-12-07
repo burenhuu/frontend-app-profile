@@ -24,7 +24,7 @@ export default function Layout(){
       });
   }, []);
   return(
-    <>
+    <div className="container">
         <Header />
         <main>
           <Switch>
@@ -34,6 +34,6 @@ export default function Layout(){
           </Switch>
         </main>
         <Footer />
-    </>
+    </div>
   )
 }
